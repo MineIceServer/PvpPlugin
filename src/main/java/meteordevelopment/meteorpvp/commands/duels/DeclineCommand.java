@@ -9,6 +9,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+@SuppressWarnings("unused")
 public class DeclineCommand extends MyCommand {
     public DeclineCommand() {
         super("decline", "Declines a duel.", "/decline <player>");

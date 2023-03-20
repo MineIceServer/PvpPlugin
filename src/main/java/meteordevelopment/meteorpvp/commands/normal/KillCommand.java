@@ -4,6 +4,7 @@ import meteordevelopment.meteorpvp.commands.MyCommand;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+@SuppressWarnings("unused")
 public class KillCommand extends MyCommand {
     public KillCommand() {
         super("kill", "Kills you.");

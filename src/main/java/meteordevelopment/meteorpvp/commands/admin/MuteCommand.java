@@ -11,6 +11,7 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+@SuppressWarnings("unused")
 public class MuteCommand extends MyCommand {
     public MuteCommand() {
         super("mute", "Mutes a player.", "/mute <username>", Perms.HELPER);

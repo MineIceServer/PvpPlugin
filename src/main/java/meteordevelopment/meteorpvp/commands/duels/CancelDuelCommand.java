@@ -8,6 +8,7 @@ import meteordevelopment.meteorpvp.arenas.Regions;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+@SuppressWarnings("unused")
 public class CancelDuelCommand extends MyCommand {
     public CancelDuelCommand() {
         super("cancelduel", "Cancels your duel request.");

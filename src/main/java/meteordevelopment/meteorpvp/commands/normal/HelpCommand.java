@@ -11,6 +11,7 @@ import org.bukkit.util.ChatPaginator;
 import java.util.Arrays;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class HelpCommand extends MyCommand {
     private static final List<String> TAB = Arrays.asList("1", "2");
 

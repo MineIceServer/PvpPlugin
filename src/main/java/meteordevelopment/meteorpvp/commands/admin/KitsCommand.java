@@ -8,6 +8,7 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+@SuppressWarnings("unused")
 public class KitsCommand extends MyCommand {
     public KitsCommand() {
         super("kits", "View kits of another person.", "/kits <username>", Perms.MODERATOR);

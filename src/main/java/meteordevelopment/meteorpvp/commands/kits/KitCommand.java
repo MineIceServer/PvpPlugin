@@ -10,6 +10,7 @@ import meteordevelopment.meteorpvp.utils.Utils;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+@SuppressWarnings("unused")
 public class KitCommand extends MyCommand {
     public KitCommand() {
         super("kit", "Opens kit gui or equips named kit.", "/kit <name>");

@@ -10,6 +10,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+@SuppressWarnings("unused")
 public class UnmuteCommand extends MyCommand {
     public UnmuteCommand() {
         super("unmute", "Unmutes a player.", "/unmute <username>", Perms.HELPER);

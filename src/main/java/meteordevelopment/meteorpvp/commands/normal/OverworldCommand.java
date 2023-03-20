@@ -8,6 +8,7 @@ import meteordevelopment.meteorpvp.utils.Utils;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+@SuppressWarnings("unused")
 public class OverworldCommand extends MyCommand {
     public OverworldCommand() {
         super("overworld", "Teleports you to the overworld.");

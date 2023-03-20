@@ -5,6 +5,7 @@ import meteordevelopment.meteorpvp.utils.Perms;
 import meteordevelopment.meteorpvp.commands.MyCommand;
 import org.bukkit.command.CommandSender;
 
+@SuppressWarnings("unused")
 public class ClearArenasCommand extends MyCommand {
     public ClearArenasCommand() {
         super("cleararenas", "Clears arenas.", Perms.MODERATOR);

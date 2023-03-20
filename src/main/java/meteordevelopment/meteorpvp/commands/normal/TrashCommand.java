@@ -6,6 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+@SuppressWarnings("unused")
 public class TrashCommand extends MyCommand {
     public TrashCommand() {
         super("trash", "Opens a trash can.");

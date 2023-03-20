@@ -9,6 +9,7 @@ import meteordevelopment.meteorpvp.chat.Prefixes;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+@SuppressWarnings("unused")
 public class CreateKitCommand extends MyCommand {
     public CreateKitCommand() {
         super("createkit", "Creates a new private kit.", "/createkit <name>");

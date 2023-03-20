@@ -8,6 +8,7 @@ import meteordevelopment.meteorpvp.utils.Utils;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+@SuppressWarnings("unused")
 public class NetherCommand extends MyCommand {
     public NetherCommand() {
         super("nether", "Teleports you to the nether.");

@@ -11,6 +11,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+@SuppressWarnings("unused")
 public class DuelCommand extends MyCommand {
     public DuelCommand() {
         super("duel", "Sends duel request to a player.", "/duel <player>");

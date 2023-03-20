@@ -7,6 +7,7 @@ import meteordevelopment.meteorpvp.chat.Msgs;
 import meteordevelopment.meteorpvp.chat.Prefixes;
 import org.bukkit.command.CommandSender;
 
+@SuppressWarnings("unused")
 public class ToggleKitCreatorCommand extends MyCommand {
     public ToggleKitCreatorCommand() {
         super("togglekitcreator", "Toggles kit creator.", Perms.ADMIN);

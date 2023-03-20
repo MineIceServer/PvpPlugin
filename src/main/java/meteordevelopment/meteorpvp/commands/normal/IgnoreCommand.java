@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
+@SuppressWarnings("unused")
 public class IgnoreCommand extends MyCommand {
     private final StringBuilder sb = new StringBuilder();
 

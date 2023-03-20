@@ -7,6 +7,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+@SuppressWarnings("unused")
 public class MyReloadCommand extends MyCommand {
     public MyReloadCommand() {
         super("reload", "Reloads plugins.", Perms.ADMIN);

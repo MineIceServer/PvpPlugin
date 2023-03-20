@@ -8,6 +8,7 @@ import meteordevelopment.meteorpvp.commands.MyCommand;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+@SuppressWarnings("unused")
 public class KitCreatorCommand extends MyCommand {
     public KitCreatorCommand() {
         super("kitcreator", "Teleports you to kit creator.");

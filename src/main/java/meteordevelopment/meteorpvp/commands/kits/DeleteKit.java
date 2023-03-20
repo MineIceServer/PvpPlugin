@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class DeleteKit extends MyCommand {
     private static final List<String> LIST = new ArrayList<>();
 
