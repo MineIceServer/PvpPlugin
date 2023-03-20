@@ -28,27 +28,6 @@ import java.util.Set;
 import java.util.UUID;
 
 public class Kit implements ISerializable<CompoundTag> {
-    private static final Set<Material> ALLOWED_ITEMS = Set.of(
-            Material.NETHERITE_HELMET,
-            Material.NETHERITE_CHESTPLATE,
-            Material.NETHERITE_LEGGINGS,
-            Material.NETHERITE_BOOTS,
-            Material.NETHERITE_SWORD,
-            Material.NETHERITE_PICKAXE,
-            Material.BOW,
-            Material.END_CRYSTAL,
-            Material.ENCHANTED_GOLDEN_APPLE,
-            Material.OBSIDIAN,
-            Material.CHORUS_FRUIT,
-            Material.EXPERIENCE_BOTTLE,
-            Material.TOTEM_OF_UNDYING,
-            Material.ENDER_CHEST,
-            Material.ENDER_PEARL,
-            Material.TIPPED_ARROW,
-            Material.ARROW,
-            Material.POTION
-    );
-
     public String name;
     public UUID author;
     public boolean isPublic;
@@ -78,9 +57,6 @@ public class Kit implements ISerializable<CompoundTag> {
 
     private boolean isBanned(ItemStack itemStack) {
         if (itemStack == null) return true;
-
-        // Banned item list
-        if (!ALLOWED_ITEMS.contains(itemStack.getType())) return true;
 
         // Stack size
         if (itemStack.getMaxStackSize() != -1 && itemStack.getAmount() > itemStack.getMaxStackSize()) return true;

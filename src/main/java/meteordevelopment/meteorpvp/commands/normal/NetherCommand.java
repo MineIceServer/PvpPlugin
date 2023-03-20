@@ -8,9 +8,9 @@ import meteordevelopment.meteorpvp.utils.Utils;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class SpawnCommand extends MyCommand {
-    public SpawnCommand() {
-        super("spawn", "Teleports you to the spawn.");
+public class NetherCommand extends MyCommand {
+    public NetherCommand() {
+        super("nether", "Teleports you to the nether.");
     }
 
     @Override
@@ -22,7 +22,7 @@ public class SpawnCommand extends MyCommand {
             return true;
         }
 
-        player.teleport(Utils.OVERWORLD.getSpawnLocation().add(0.5, 0, 0.5));
+        player.teleport(Utils.NETHER.getSpawnLocation().add(0.5, 0, 0.5));
 
         return true;
     }
