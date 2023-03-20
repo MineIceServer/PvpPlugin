@@ -20,21 +20,14 @@ public class Regions {
     public static ProtectedRegion OW_SPAWN;
     public static ProtectedRegion OW_PVP;
 
-    public static ProtectedRegion NETHER_SPAWN;
-    public static ProtectedRegion NETHER_PVP;
-
     public static void onEnable() {
         RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
         RegionManager OW = container.get(BukkitAdapter.adapt(Utils.OVERWORLD));
-        RegionManager NETHER = container.get(BukkitAdapter.adapt(Utils.NETHER));
 
         KITCREATOR = OW.getRegion("kitcreator");
 
         OW_SPAWN = OW.getRegion("spawn");
         OW_PVP = OW.getRegion("pvp");
-
-        NETHER_SPAWN = NETHER.getRegion("spawn");
-        NETHER_PVP = NETHER.getRegion("pvp");
     }
 
     public static boolean isIn(ProtectedRegion region,Location pos) {
@@ -55,7 +48,7 @@ public class Regions {
             if (duel != null) return true;
         }
 
-        return isIn(NETHER_PVP, player);
+        return false;
     }
 
     public static boolean isInAnyPvp(Player player) {
@@ -67,7 +60,7 @@ public class Regions {
     }
 
     public static boolean isInAnyNether(Player player) {
-        return isIn(NETHER_SPAWN, player) || isIn(NETHER_PVP, player);
+        return false;
     }
 
     public static boolean isInAnyBuildable(Location location) {
@@ -75,7 +68,7 @@ public class Regions {
             return isIn(OW_PVP, location) || Duels.INSTANCE.overworldNormal.isIn(location) || Duels.INSTANCE.overworldFlat.isIn(location);
         }
 
-        return isIn(NETHER_PVP, location) || Duels.INSTANCE.netherNormal.isIn(location) || Duels.INSTANCE.netherFlat.isIn(location);
+        return false;
     }
 
     public static Region toWERegion(ProtectedRegion region) {

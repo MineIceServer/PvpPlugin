@@ -11,7 +11,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 public class PlayerLeaveListener implements Listener {
     @EventHandler
     private void onPlayerJoin(PlayerJoinEvent event) {
-        event.getPlayer().teleport(Utils.NETHER.getSpawnLocation().add(0.5, 0, 0.5));
+        event.getPlayer().teleport(Utils.OVERWORLD.getSpawnLocation().add(0.5, 0, 0.5));
         event.getPlayer().spigot().respawn();
 
         event.setJoinMessage(ChatColor.GREEN + event.getPlayer().getName() + ChatColor.GRAY + " joined");

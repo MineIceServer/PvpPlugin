@@ -22,7 +22,7 @@ public class SpawnCommand extends MyCommand {
             return true;
         }
 
-        player.teleport(Utils.NETHER.getSpawnLocation().add(0.5, 0, 0.5));
+        player.teleport(Utils.OVERWORLD.getSpawnLocation().add(0.5, 0, 0.5));
 
         return true;
     }

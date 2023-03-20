@@ -31,7 +31,6 @@ public class ArenaClearer {
 
                 Bukkit.getScheduler().runTaskLater(MeteorPvp.INSTANCE, () -> {
                     clean("world", Regions.OW_PVP);
-                    clean("world_nether", Regions.NETHER_PVP);
                 }, 20 * 5);
             }, 20 * 30);
         }
@@ -39,7 +38,6 @@ public class ArenaClearer {
             forEachPlayer(player -> player.sendMessage(Prefixes.ARENA + "Clearing arenas."));
 
             clean("world", Regions.OW_PVP);
-            clean("world_nether", Regions.NETHER_PVP);
         }
     }
 

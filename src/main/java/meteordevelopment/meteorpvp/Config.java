@@ -30,7 +30,7 @@ public class Config {
         FOLDER = MeteorPvp.INSTANCE.getDataFolder();
 
         // Kit creator
-        KIT_CREATOR_LOCATION = new Location(Bukkit.getWorld("world"), 100000.5, 100, 100000.5, 0, 0);
+        KIT_CREATOR_LOCATION = new Location(Bukkit.getWorld("world"), 290, 2, 291, 0, 0);
         KIT_CREATOR_ENABLED = CONFIG.getBoolean("kit_creator.enabled");
 
         // Anti cheat
