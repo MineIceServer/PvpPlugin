@@ -12,13 +12,13 @@ public class PrivateMsgs {
     private static final Map<UUID, UUID> lastMessages = new HashMap<>();
 
     public static void send(Player sender, Player receiver, String message) {
-        String senderNick = ChatColor.translateAlternateColorCodes('&', sender.getDisplayName());
-        String receiverNick = ChatColor.translateAlternateColorCodes('&', receiver.getDisplayName());
+        String senderNick = ChatColor.translateAlternateColorCodes('&', sender.getName());
+        String receiverNick = ChatColor.translateAlternateColorCodes('&', receiver.getName());
 
-        sender.sendMessage(getMsg("Me", receiverNick, message));
+        sender.sendMessage(getMsg("Я", receiverNick, message));
 
         if (!Ignores.hasReceiverIgnored(sender, receiver)) {
-            receiver.sendMessage(getMsg(senderNick, "Me", message));
+            receiver.sendMessage(getMsg(senderNick, "Я", message));
         }
 
         lastMessages.put(receiver.getUniqueId(), sender.getUniqueId());

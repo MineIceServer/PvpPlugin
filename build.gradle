@@ -46,7 +46,7 @@ processResources {
     }
 }
 
-task copyJar(type: Copy) {
+tasks.register('copyJar') {
     from "build/libs/pvp-" + version + ".jar"
     into "run/plugins"
 }

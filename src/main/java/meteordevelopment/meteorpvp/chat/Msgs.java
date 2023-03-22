@@ -6,96 +6,96 @@ import org.bukkit.ChatColor;
 public class Msgs {
     // General
     public static String playerNotOnline() {
-        return "Player is not online.";
+        return "Игрок не онлайн.";
     }
 
     public static String cantUseThisInPvp() {
-        return "You can't use this command while in pvp.";
+        return "Ты не можешь испльзовать эту команду во время пвп.";
     }
 
     // Duels
     public static String dontHaveRequest() {
-        return "You don't have duel request from that player.";
+        return "У тебя нету запроса на дуель от этого игрока.";
     }
 
     public static String cancelledRequest() {
-        return "Cancelled duel request.";
+        return "Запрос на дуель отменен.";
     }
 
     public static String didntSendRequest() {
-        return "You didn't send any duel request.";
+        return "Вы не отправляли ни одного запроса на дуель.";
     }
 
     public static String cantDuelYourself() {
-        return "You can't duel yourself.";
+        return "Вы не можете отправить запрос на дуель самому себе.";
     }
 
     public static String playerIsInDuel(String otherPlayer) {
-        return "Player is in duel with " + otherPlayer + ".";
+        return "Игрок уже на дуели с " + otherPlayer + ".";
     }
 
     public static String duelRequestSent() {
-        return "Duel request sent.";
+        return "Запрос на дуель отправлен.";
     }
 
     public static String alreadySentRequest() {
-        return "You have already sent a duel request.";
+        return "Вы уже отправили запрос на дуель.";
     }
 
     public static String cancelDuelHelp() {
-        return "Do /cancelduel to cancel it.";
+        return "Введите /cancelduel для отмены.";
     }
 
     public static String duelRequest(String player, String arena) {
-        return ChatColor.YELLOW + "" + ChatColor.BOLD + player + ChatColor.GRAY + " wants to duel you in " + arena + " arena.";
+        return ChatColor.YELLOW + "" + ChatColor.BOLD + player + ChatColor.GRAY + " вызывает тебя на дуель на " + arena + " арене.";
     }
 
     public static String playerDeclinedDuel(String player) {
-        return ChatColor.GRAY + player + ChatColor.WHITE + " declined your duel.";
+        return ChatColor.GRAY + player + ChatColor.WHITE + " отменил дуель.";
     }
 
     public static String youDeclinedDuel(String player) {
-        return "Declined duel from " + ChatColor.GRAY + player + ChatColor.WHITE + ".";
+        return "Отменен запрос на дуель от " + ChatColor.GRAY + player + ChatColor.WHITE + ".";
     }
 
     public static String yourDuelExpired() {
-        return "Your duel request expired.";
+        return "Срок запроса на дуель истек.";
     }
 
     public static String duelExpired(String player) {
-        return "Duel request from " + ChatColor.GRAY + player + ChatColor.WHITE + " expired.";
+        return "Срок запроса на дуель от " + ChatColor.GRAY + player + ChatColor.WHITE + " истек.";
     }
 
     public static String noAvailableArenas() {
-        return "There are currently no available arenas for this mode.";
+        return "Нету свободной арены.";
     }
 
     // KITS
     public static String createdKit(String name) {
-        return "Created kit with name " + ChatColor.GRAY + "'" + name + "'" + ChatColor.WHITE + ".";
+        return "Создан кит " + ChatColor.GRAY + "'" + name + "'" + ChatColor.WHITE + ".";
     }
 
     public static String maxKits(MaxKits maxKits) {
-        return "You can only have " + maxKits.count + " kits.";
+        return "У тебя может быть только " + maxKits.count + " китов.";
     }
 
     public static String kitAlreadyExists(String name) {
-        return "Kit with name " + ChatColor.GRAY + "'" + name + "' " + ChatColor.WHITE + "already exists.";
+        return "Кит с названием " + ChatColor.GRAY + "'" + name + "' " + ChatColor.WHITE + "уже существует.";
     }
 
     public static String deletedKit(String name) {
-        return "Kit with name " + ChatColor.GRAY + "'" + name + "' " + ChatColor.WHITE + "has been deleted.";
+        return "Кит с названием " + ChatColor.GRAY + "'" + name + "' " + ChatColor.WHITE + "успешно удален.";
     }
 
     public static String kitDoesntExist(String name) {
-        return "Kit with name " + ChatColor.GRAY + "'" + name + "' " + ChatColor.WHITE + "doesn't exist.";
+        return "Кита с названием " + ChatColor.GRAY + "'" + name + "' " + ChatColor.WHITE + "не существет.";
     }
 
     public static String kitCreatorToggled(boolean on) {
-        return "Kit creator is now " + ChatColor.GRAY + (on ? "on" : "off") + ChatColor.WHITE + ".";
+        return "Место для создания китов " + ChatColor.GRAY + (on ? "включен" : "выключен") + ChatColor.WHITE + ".";
     }
 
     public static String dontOwnKit() {
-        return "You don't own that kit.";
+        return "Вы не владелец этого кита.";
     }
 }

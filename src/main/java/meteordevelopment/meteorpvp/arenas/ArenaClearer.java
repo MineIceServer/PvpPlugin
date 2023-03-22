@@ -24,10 +24,10 @@ public class ArenaClearer {
 
     public static void clear(boolean instant) {
         if (!instant) {
-            forEachPlayer(player -> player.sendMessage(Prefixes.ARENA + "Clearing arenas in 30 seconds."));
+            forEachPlayer(player -> player.sendMessage(Prefixes.ARENA + "Отчистка арен в течение 5 секунд."));
 
             Bukkit.getScheduler().runTaskLater(MeteorPvp.INSTANCE, () -> {
-                forEachPlayer(player -> player.sendMessage(Prefixes.ARENA + "Clearing arenas in 5 seconds."));
+                forEachPlayer(player -> player.sendMessage(Prefixes.ARENA + "Отчистка арен в течение 5 секунд."));
 
                 Bukkit.getScheduler().runTaskLater(MeteorPvp.INSTANCE, () -> {
                     clean("world", Regions.OW_PVP);
@@ -35,7 +35,7 @@ public class ArenaClearer {
             }, 20 * 30);
         }
         else {
-            forEachPlayer(player -> player.sendMessage(Prefixes.ARENA + "Clearing arenas."));
+            forEachPlayer(player -> player.sendMessage(Prefixes.ARENA + "Чистка арен."));
 
             clean("world", Regions.OW_PVP);
         }
@@ -57,7 +57,7 @@ public class ArenaClearer {
                 );
             }
 
-            forEachPlayer(world, player -> player.sendMessage(Prefixes.ARENA + "Arena cleared."));
+            forEachPlayer(world, player -> player.sendMessage(Prefixes.ARENA + "арена отчищена."));
         });
     }
 
