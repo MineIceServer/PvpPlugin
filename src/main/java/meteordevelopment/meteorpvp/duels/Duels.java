@@ -20,7 +20,7 @@ public enum Duels {
 
     public DuelsMode overworldNormal;
     public DuelsMode overworldFlat;
-    
+
     public DuelsMode netherNormal;
     public DuelsMode netherFlat;
 
@@ -35,11 +35,16 @@ public enum Duels {
         BlockVector3 minimumOwPointFlat = Regions.OW_DUEL_FLAT.getMinimumPoint();
         BlockVector3 maximumOwPointFlat = Regions.OW_DUEL_FLAT.getMaximumPoint();
 
-        overworldNormal = new DuelsMode(Utils.OVERWORLD, "overworld", 1000000, 1000000, 1000192, 1000000, 1000384, 1000000, 1000576, 1000000, 1000768, 1000000);
-        overworldFlat = new DuelsMode(Utils.OVERWORLD, "flat overworld", 1000000, 1000192, 1000192, 1000192, 1000384, 1000192, 1000576, 1000192, 1000768, 1000192);
+        overworldNormal = new DuelsMode(Utils.OVERWORLD, "overworld", minimumOwPointBedrock.getBlockX(), minimumOwPointBedrock.getBlockZ(), maximumOwPointBedrock.getBlockX(), maximumOwPointBedrock.getBlockZ());
+        overworldFlat = new DuelsMode(Utils.OVERWORLD, "flat overworld", minimumOwPointFlat.getBlockX(), minimumOwPointFlat.getBlockZ(), maximumOwPointFlat.getBlockX(), maximumOwPointFlat.getBlockZ());
 
-        netherNormal = new DuelsMode(Utils.NETHER, "nether", 1000000, 1000000, 1000192, 1000000, 1000384, 1000000, 1000576, 1000000, 1000768, 1000000);
-        netherFlat = new DuelsMode(Utils.NETHER, "flat nether", 1000000, 1000192, 1000192, 1000192, 1000384, 1000192, 1000576, 1000192, 1000768, 1000192);
+        BlockVector3 minimumNetherPointBedrock = Regions.NETHER_DUEL_BEDROCK.getMinimumPoint();
+        BlockVector3 maximumNetherPointBedrock = Regions.NETHER_DUEL_BEDROCK.getMaximumPoint();
+        BlockVector3 minimumNetherPointFlat = Regions.NETHER_DUEL_FLAT.getMinimumPoint();
+        BlockVector3 maximumNetherPointFlat = Regions.NETHER_DUEL_FLAT.getMaximumPoint();
+
+        netherNormal = new DuelsMode(Utils.NETHER, "nether", minimumNetherPointBedrock.getBlockX(), minimumNetherPointBedrock.getBlockZ(), maximumNetherPointBedrock.getBlockX(), maximumNetherPointBedrock.getBlockZ());
+        netherFlat = new DuelsMode(Utils.NETHER, "flat nether", minimumNetherPointFlat.getBlockX(), minimumNetherPointFlat.getBlockZ(), maximumNetherPointFlat.getBlockX(), maximumNetherPointFlat.getBlockZ());
 
         duels.clear();
         sentRequests.clear();
@@ -50,8 +55,13 @@ public enum Duels {
         return duels.get(player);
     }
 
-    public Iterator<DuelRequest> sentRequestsIterator() { return sentRequests.values().iterator(); }
-    public Iterable<List<DuelRequest>> pendingRequestsIterable() { return pendingRequests.values(); }
+    public Iterator<DuelRequest> sentRequestsIterator() {
+        return sentRequests.values().iterator();
+    }
+
+    public Iterable<List<DuelRequest>> pendingRequestsIterable() {
+        return pendingRequests.values();
+    }
 
     public void removeSentRequest(Player sender) {
         sentRequests.remove(sender);

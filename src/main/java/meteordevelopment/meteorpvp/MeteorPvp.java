@@ -42,10 +42,11 @@ public final class MeteorPvp extends JavaPlugin implements Listener {
         Uptime.onEnable();
 
         Kits.INSTANCE.init();
-//        Duels.INSTANCE.init();
+        Duels.INSTANCE.init();
 
         Ignores.load();
         Mutes.load();
+
         Metrics.start();
 
         initialized = true;

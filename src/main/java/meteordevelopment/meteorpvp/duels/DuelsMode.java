@@ -14,20 +14,10 @@ public class DuelsMode {
     private final List<Duel> all = new ArrayList<>();
     private final Queue<Duel> available = new ArrayDeque<>();
 
-    public DuelsMode(World world, String arenaName, int x1, int z1, int x2, int z2, int x3, int z3, int x4, int z4, int x5, int z5) {
+    public DuelsMode(World world, String arenaName, int x1, int z1, int x2, int z2) {
         this.arenaName = arenaName;
 
-        add(new Duel(this, world, x1, z1));
-        add(new Duel(this, world, x2, z2));
-        add(new Duel(this, world, x3, z3));
-        add(new Duel(this, world, x4, z4));
-        add(new Duel(this, world, x5, z5));
-    }
-
-    public DuelsMode(World world, String arenaName, int x, int z) {
-        this.arenaName = arenaName;
-
-        add(new Duel(this, world, x, z));
+        add(new Duel(this, world, x1, z1, x2, z2));
     }
 
     private void add(Duel duel) {

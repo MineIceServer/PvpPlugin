@@ -27,7 +27,6 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 public class Duel implements Listener {
-    private static final int SIZE = 6 * 16;
 
     private final DuelsMode mode;
     private final World world;
@@ -43,13 +42,13 @@ public class Duel implements Listener {
     private boolean started, starting;
     private int startTimer;
 
-    public Duel(DuelsMode mode, World world, int x, int z) {
+    public Duel(DuelsMode mode, World world, int x, int z, int x1, int z1) {
         this.mode = mode;
         this.world = world;
-        this.region = new CuboidRegion(BukkitAdapter.adapt(world), BlockVector3.at(x, 0, z), BlockVector3.at(x + SIZE, 119, z + SIZE));
+        this.region = new CuboidRegion(BukkitAdapter.adapt(world), BlockVector3.at(x, 0, z), BlockVector3.at(x1, 119, z1));
 
         this.player1Location = new Location(world, x + 15, 5, z + 15);
-        this.player2Location = new Location(world, x + SIZE - 15, 5, z + SIZE - 15);
+        this.player2Location = new Location(world, x1 - 15, 5, z1 - 15);
 
         Bukkit.getPluginManager().registerEvents(this, MeteorPvp.INSTANCE);
     }
@@ -68,6 +67,7 @@ public class Duel implements Listener {
         player1.sendMessage(Prefixes.DUELS + "Preparing arena.");
         player2.sendMessage(Prefixes.DUELS + "Preparing arena.");
 
+        if (BlockTypes.BEDROCK == null) return;
         FaweAPI.getTaskManager().async(() -> {
             try (EditSession editSession = WorldEdit.getInstance().newEditSessionBuilder().world(BukkitAdapter.adapt(world)).fastMode(true).build()) {
                 editSession.replaceBlocks(region, new InverseSingleBlockTypeMask(editSession, BlockTypes.BEDROCK), BlockTypes.AIR);

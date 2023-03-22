@@ -3,7 +3,7 @@ kit_creator:
   enabled: true
 
 # Anti cheat
-min_crystal_age: 1
+min_crystal_age: 0
 
 # Other
 server_token: token

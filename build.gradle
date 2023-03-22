@@ -47,7 +47,7 @@ processResources {
 }
 
 task copyJar(type: Copy) {
-    from "build/libs/meteor-pvp-" + version + ".jar"
+    from "build/libs/pvp-" + version + ".jar"
     into "run/plugins"
 }
 

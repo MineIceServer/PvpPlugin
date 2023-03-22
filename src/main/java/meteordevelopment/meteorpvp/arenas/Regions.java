@@ -52,7 +52,7 @@ public class Regions {
         NETHER_DUEL_FLAT = NETHER.getRegion(Objects.requireNonNull(Config.CONFIG.getString("duel_flat")));
     }
 
-    public static boolean isIn(ProtectedRegion region,Location pos) {
+    public static boolean isIn(ProtectedRegion region, Location pos) {
         return region.contains(pos.getBlockX(), pos.getBlockY(), pos.getBlockZ());
     }
 
@@ -61,13 +61,12 @@ public class Regions {
     }
 
     public static boolean isInAnyPvp(Player player, boolean duels) {
-        if (player.getWorld() == Utils.OVERWORLD) {
+        if (player.getWorld() == Utils.OVERWORLD)
             return isIn(OW_PVP, player) || Duels.INSTANCE.get(player) != null;
-        }
 
         if (duels) {
             Duel duel = Duels.INSTANCE.get(player);
-            if (duel != null) return true;
+            return duel != null;
         }
 
         return false;
@@ -82,13 +81,14 @@ public class Regions {
     }
 
     public static boolean isInAnyNether(Player player) {
-        return false;
+        return isIn(NETHER_PVP, player) || isIn(NETHER_SPAWN, player);
     }
 
     public static boolean isInAnyBuildable(Location location) {
-        if (location.getWorld() == Utils.OVERWORLD) {
+        if (location.getWorld() == Utils.OVERWORLD)
             return isIn(OW_PVP, location) || Duels.INSTANCE.overworldNormal.isIn(location) || Duels.INSTANCE.overworldFlat.isIn(location);
-        }
+        else if (location.getWorld() == Utils.NETHER)
+            return isIn(NETHER_PVP, location) || Duels.INSTANCE.netherNormal.isIn(location) || Duels.INSTANCE.netherFlat.isIn(location);
 
         return false;
     }
