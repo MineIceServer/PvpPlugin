@@ -7,6 +7,7 @@ import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.protection.managers.RegionManager;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
+import meteordevelopment.meteorpvp.Config;
 import meteordevelopment.meteorpvp.duels.Duel;
 import meteordevelopment.meteorpvp.duels.Duels;
 import meteordevelopment.meteorpvp.utils.Utils;
@@ -14,20 +15,41 @@ import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
+import java.util.Objects;
+
 public class Regions {
     public static ProtectedRegion KITCREATOR;
 
     public static ProtectedRegion OW_SPAWN;
     public static ProtectedRegion OW_PVP;
+    public static ProtectedRegion OW_DUEL_BEDROCK;
+    public static ProtectedRegion OW_DUEL_FLAT;
+
+    public static ProtectedRegion NETHER_SPAWN;
+    public static ProtectedRegion NETHER_PVP;
+    public static ProtectedRegion NETHER_DUEL_BEDROCK;
+    public static ProtectedRegion NETHER_DUEL_FLAT;
 
     public static void onEnable() {
         RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
         RegionManager OW = container.get(BukkitAdapter.adapt(Utils.OVERWORLD));
+        RegionManager NETHER = container.get(BukkitAdapter.adapt(Utils.NETHER));
 
-        KITCREATOR = OW.getRegion("kitcreator");
+        if (OW == null || NETHER == null || Config.CONFIG == null) return;
 
-        OW_SPAWN = OW.getRegion("spawn");
-        OW_PVP = OW.getRegion("pvp");
+        KITCREATOR = OW.getRegion(Objects.requireNonNull(Config.CONFIG.getString("kitcreator")));
+
+        OW_SPAWN = OW.getRegion(Objects.requireNonNull(Config.CONFIG.getString("spawn")));
+        OW_PVP = OW.getRegion(Objects.requireNonNull(Config.CONFIG.getString("pvp")));
+
+        OW_DUEL_BEDROCK = OW.getRegion(Objects.requireNonNull(Config.CONFIG.getString("duel_bedrock")));
+        OW_DUEL_FLAT = OW.getRegion(Objects.requireNonNull(Config.CONFIG.getString("duel_flat")));
+
+        NETHER_SPAWN = NETHER.getRegion(Objects.requireNonNull(Config.CONFIG.getString("spawn")));
+        NETHER_PVP = NETHER.getRegion(Objects.requireNonNull(Config.CONFIG.getString("pvp")));
+
+        NETHER_DUEL_BEDROCK = NETHER.getRegion(Objects.requireNonNull(Config.CONFIG.getString("duel_bedrock")));
+        NETHER_DUEL_FLAT = NETHER.getRegion(Objects.requireNonNull(Config.CONFIG.getString("duel_flat")));
     }
 
     public static boolean isIn(ProtectedRegion region,Location pos) {

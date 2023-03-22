@@ -24,6 +24,12 @@ public class DuelsMode {
         add(new Duel(this, world, x5, z5));
     }
 
+    public DuelsMode(World world, String arenaName, int x, int z) {
+        this.arenaName = arenaName;
+
+        add(new Duel(this, world, x, z));
+    }
+
     private void add(Duel duel) {
         all.add(duel);
         available.add(duel);

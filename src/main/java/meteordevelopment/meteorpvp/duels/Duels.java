@@ -1,5 +1,7 @@
 package meteordevelopment.meteorpvp.duels;
 
+import com.sk89q.worldedit.math.BlockVector3;
+import meteordevelopment.meteorpvp.arenas.Regions;
 import meteordevelopment.meteorpvp.chat.Msgs;
 import meteordevelopment.meteorpvp.chat.Prefixes;
 import meteordevelopment.meteorpvp.utils.Utils;
@@ -28,6 +30,11 @@ public enum Duels {
     private final Map<HumanEntity, List<DuelRequest>> pendingRequests = new HashMap<>();
 
     public void init() {
+        BlockVector3 minimumOwPointBedrock = Regions.OW_DUEL_BEDROCK.getMinimumPoint();
+        BlockVector3 maximumOwPointBedrock = Regions.OW_DUEL_BEDROCK.getMaximumPoint();
+        BlockVector3 minimumOwPointFlat = Regions.OW_DUEL_FLAT.getMinimumPoint();
+        BlockVector3 maximumOwPointFlat = Regions.OW_DUEL_FLAT.getMaximumPoint();
+
         overworldNormal = new DuelsMode(Utils.OVERWORLD, "overworld", 1000000, 1000000, 1000192, 1000000, 1000384, 1000000, 1000576, 1000000, 1000768, 1000000);
         overworldFlat = new DuelsMode(Utils.OVERWORLD, "flat overworld", 1000000, 1000192, 1000192, 1000192, 1000384, 1000192, 1000576, 1000192, 1000768, 1000192);
 

@@ -7,3 +7,10 @@ min_crystal_age: 1
 
 # Other
 server_token: token
+
+# Regions names
+duel_bedrock: "pvp_bedrock"
+duel_flat: "pvp_flat"
+spawn: "spawn"
+pvp: "pvp"
+kitcreator: "kitcreator"
